@@ -1,0 +1,2 @@
+1. you can change the database address from the config.json, then it will automatically creates required tables in the given database
+2. if you don't change the database it will take online database, this database will be deleted on the 7 day of sharing the source code

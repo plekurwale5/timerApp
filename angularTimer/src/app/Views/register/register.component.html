@@ -1,0 +1,40 @@
+<div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
+        <form class="login100-form validate-form">
+          <span class="login100-form-logo">
+            <i class="zmdi zmdi-landscape"></i>
+          </span>
+  
+          <span class="login100-form-title p-b-34 p-t-27">
+            Register
+          </span>
+          <div class="row">
+            <div class="best-fit col-sm-6 validate-input" data-validate = "Enter First Name" style="float: left;">
+              <input class="input100" type="text" name="firstname" placeholder="First Name" [(ngModel)]="user.firstname"  >
+            </div>
+    
+            <div class="best-fit col-sm-6 validate-input" data-validate = "Enter Last Name" style="float: right;">
+              <input class="input100" type="text" name="lastname" placeholder="Last Name"  [(ngModel)]="user.lastname" >
+            </div>
+    
+            <div class="best-fit col-sm-12 validate-input" data-validate = "Email ID">
+              <input class="input100" type="text" name="email" placeholder="Email ID"  [(ngModel)]="user.email">
+            </div>
+    
+            <div class="best-fit col-sm-6 validate-input" data-validate="Password">
+              <input class="input100" type="password" name="password" placeholder="Password" [(ngModel)]="user.password" >
+            </div>
+          </div>
+
+  
+          <div class="container-login100-form-btn">
+            <button class="login100-form-btn" (click)="register()">
+              Register
+            </button><br>
+            {{message}}
+          </div>  
+        </form>
+      </div>
+    </div>
+  </div>

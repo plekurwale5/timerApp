@@ -1,0 +1,11 @@
+{
+    "database":{
+        "host":"john.db.elephantsql.com",
+        "database":"qhyvebqb",
+        "username":"qhyvebqb",
+        "password":"IWquqftDnMhqEVGrFh3qLevB_aHB9V2B",
+        "ssl":true,
+        "port":5432
+    },
+    "app_port":4001
+}

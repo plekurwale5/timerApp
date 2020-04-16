@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="container-login100 col-sm-12">
+    <div class="wrap-login100">
+      <div ng-app="MyApp" ng-controller="MyController" class="row">
+        <p class="clock col-sm-12">
+          <span id="seconds">{{timer1.seconds | number : '2.0'}}</span>:<span
+            id="tens">{{timer1.tens | number : '2.0'}}</span></p>
+        <div class="col-sm-12">
+          <input type="text" id="description-text" placeholder="Description" [(ngModel)]="description">
+        </div>
+        <div class="col-sm-6">
+          <button id="button-start" (click)="startButton()">Start</button>
+        </div>
+        <div class="col-sm-6">
+          <button id="button-stop" (click)="stopButton()">Stop/Save</button>
+        </div>
+        <br>
+        {{message}}
+        <div ng-bind="Message">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-login100  col-sm-12 col-xs-12 col-lg-6 row">
+    <div class="table-container table-responsive">
+      <div class="col-sm-12">
+        <input type="text" id="description-text" [(ngModel)]="searchtext" placeholder="Search"
+          (ngModelChange)="search($event)">
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Description</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">Duration</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of list;let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.description}}</td>
+            <td>{{item.start_time}}</td>
+            <td>{{item.duration}}</td>
+            <td (click)=delete(i)>
+              <svg class="bi bi-trash" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
+                <path fill-rule="evenodd"
+                  d="M14.5 3a1 1 0 01-1 1H13v9a2 2 0 01-2 2H5a2 2 0 01-2-2V4h-.5a1 1 0 01-1-1V2a1 1 0 011-1H6a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM4.118 4L4 4.059V13a1 1 0 001 1h6a1 1 0 001-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+                  clip-rule="evenodd" />
+              </svg>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="container-login100 col-sm-12 col-xs-12 col-lg-6">
+    <div class="table-container table-responsive">
+      <app-chart-holder (description)="listdescription" (duration)="listduration"></app-chart-holder>
+    </div>
+  </div>
+
+</div>
